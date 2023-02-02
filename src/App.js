@@ -12,7 +12,6 @@ function App() {
     },
     onMessage: ({ data }) => setData(JSON.parse(data)),
   });
-  console.log("data", data);
   return (
     <div className="App">
       <header className="App-header"></header>
