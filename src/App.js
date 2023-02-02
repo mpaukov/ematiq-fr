@@ -17,36 +17,28 @@ function App() {
     <div className="App">
       <header className="App-header"></header>
       <main>
-        {/* <table>
-          <thead>
-            <tr>
-              <th>Start Time</th>
-              <th>Name</th>
-              <th>Payout</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((line, index) => {
-              return (
-                <tr key={index}>
-                  <td>{line.startTime}</td>
-                  <td>{line.name}</td>
-                  <td>{line.payout}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table> */}
-        {data &&
-          data.map((test) => {
-            return (
-              <div>
-                <p>{`${test.title}`}</p>
-                <p>{`${test.time}`}</p>
-                <p>{`${test.payout}`}</p>
-              </div>
-            );
-          })}
+        {data && data.length > 0 && (
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Start Time</th>
+                <th>Name</th>
+                <th>Payout</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((line, index) => {
+                return (
+                  <tr key={index}>
+                    <td>{line.time}</td>
+                    <td>{line.title}</td>
+                    <td>{line.payout}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        )}
       </main>
     </div>
   );
