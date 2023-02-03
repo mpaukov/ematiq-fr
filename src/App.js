@@ -2,7 +2,7 @@ import { useState } from "react";
 import useWebSocket from "react-use-websocket";
 import "./App.css";
 
-const WS_URL = "ws://localhost:5000";
+const WS_URL = "ws://mpaukov-ematiq.onrender.com";
 
 function App() {
   const [data, setData] = useState([{}]);
