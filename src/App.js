@@ -16,7 +16,7 @@ function App() {
     },
     onMessage: ({ data }) =>
       setData(() => {
-        console.log("Received new data", Date.now().toString());
+        console.log("Received new data", new Date());
         return JSON.parse(data).map((data) => {
           const fullDate = new Date(data.date * 1000);
           const now = new Date().getDate();
