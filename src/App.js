@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import useWebSocket from "react-use-websocket";
 import "./App.css";
 
-const WS_URL = "ws://localhost:5000";
+const WS_URL = "wss://mpaukov-ematiq.onrender.com";
+// const WS_URL = "ws://localhost:5000";
 
 function App() {
   const [data, setData] = useState([{}]);
   const [filteredData, setFilteredData] = useState([{}]);
-  const [payoutFilter, setPayoutFilter] = useState(98.0);
+  const [payoutFilter, setPayoutFilter] = useState("98.00");
 
   useWebSocket(WS_URL, {
     onOpen: () => {
@@ -45,7 +46,7 @@ function App() {
   });
 
   const handleChange = (e) => {
-    setPayoutFilter(parseFloat(e.target.value));
+    setPayoutFilter(e.target.value);
   };
 
   useEffect(() => {
@@ -103,7 +104,7 @@ function App() {
                 type="number"
                 min="0"
                 max="200"
-                step={0.1}
+                step={0.01}
                 value={payoutFilter}
                 onChange={handleChange}
               ></input>
