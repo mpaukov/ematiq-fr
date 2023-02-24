@@ -14,9 +14,14 @@ function App() {
     onOpen: () => {
       console.log("WebSocket connection established.");
     },
+    shouldReconnect: (closeEvent) => {
+      console.log("WebSocket reconnection");
+      return true;
+    },
     onMessage: ({ data }) =>
       setData(() => {
         console.log("Received new data", new Date());
+        console.log("data", JSON.parse(data));
         return JSON.parse(data).map((data) => {
           const fullDate = new Date(data.date * 1000);
           const now = new Date().getDate();
