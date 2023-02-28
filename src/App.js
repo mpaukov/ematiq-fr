@@ -31,6 +31,7 @@ function App() {
           let day;
           switch (now - date) {
             case 1:
+            case -27:
               day = "Yesterday";
               break;
             case 0:
