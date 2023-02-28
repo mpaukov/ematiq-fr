@@ -37,10 +37,12 @@ function App() {
               day = "Today";
               break;
             case -1:
+            case 27:
               day = "Tomorrow";
               break;
             case -2:
-              day = "Day after tomorrow";
+            case 26:
+              day = "The day after tomorrow";
               break;
             default:
               day = "";
