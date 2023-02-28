@@ -42,7 +42,7 @@ function App() {
               break;
             case -2:
             case 26:
-              day = "The day after tomorrow";
+              day = "Day after tomorrow";
               break;
             default:
               day = "";
